@@ -1,0 +1,27 @@
+﻿<h2>{{action}} To Do</h2>
+<form name="form" class="form-horizontal">
+    <div class="control-group" ng-class="{error: form.Todo.$invalid}">
+        <label class="control-label" for="Todo">To do</label>
+        <div class="controls">
+            <input type="text" ng-model="item.Todo" id="Todo">
+        </div>
+    </div>
+    <div class="control-group" ng-class="{error: form.Due.$invalid}">
+        <label class="control-label" for="Todo">Due</label>
+        <div class="controls">
+            <input type="text" ng-model="item.DueDate" id="Due">
+        </div>
+    </div>
+    <div class="control-group" ng-class="{error: form.Priority.$invalid}">
+        <label class="control-label" for="Todo">Priority</label>
+        <div class="controls">
+            <input type="number" ng-model="item.Priority" id="Priority">
+        </div>
+    </div>
+    <div class="form-actions">
+        <button ng-click="save()"class="btn btn-primary">
+            {{action}}
+        </button>
+        <a href="/" class="btn">Cancel</a>
+    </div>
+</form>
