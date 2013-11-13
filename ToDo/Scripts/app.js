@@ -45,8 +45,8 @@ var ListCtrl = function ($scope, $location, Todo) {
             offset:$scope.offset,            
         },
         function (data) {
-            $scope.more = data.length === 5;
-            $scope.items = $scope.items.concat(data); //Werkt nog niet goed. Hoe ga je terug naar de vorige set?
+            //$scope.more = data.length === 5;
+            //$scope.items = $scope.items.concat(data); //Werkt nog niet goed. Hoe ga je terug naar de vorige set?
         });
     };
 
@@ -68,6 +68,7 @@ var ListCtrl = function ($scope, $location, Todo) {
     }
 
     $scope.show_more = function () {
+        debugger;
         $scope.offset += $scope.limit;
         $scope.search();
     }
@@ -92,7 +93,6 @@ var ListCtrl = function ($scope, $location, Todo) {
     $scope.sort_order = 'Priority'
     $scope.is_desc = false;
     $scope.limit = 5;
-    $scope.offset = 0;
     $scope.items = [];
     $scope.more = true;
     $scope.search();
